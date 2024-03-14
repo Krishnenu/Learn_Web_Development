@@ -1,0 +1,1 @@
+console.log(new Promise(resolve=>setTimeout(()=>console.log("hii"),1000)));
