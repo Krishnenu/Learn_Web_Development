@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice ,nanoid} from "@reduxjs/toolkit";
-import exp from "constants";
 
 interface Todo {
     id: string;
@@ -9,7 +8,7 @@ interface TodoState {
     todos: Todo[];
 }
 const initialState:TodoState = {
-    todos: [{id:"1",text:"hellow"}],
+    todos: [],
 }
 
 export const todoSlice=createSlice({
@@ -24,9 +23,9 @@ export const todoSlice=createSlice({
             state.todos.push(todo);
         },
         removeTodo:(state,action:PayloadAction<string>)=>{
-            state.todos.filter((todo)=>todo.id!==action.payload)
+            state.todos=state.todos.filter((todo)=>todo.id!==action.payload);
 
-        }       
+        },   
     }
 
 })

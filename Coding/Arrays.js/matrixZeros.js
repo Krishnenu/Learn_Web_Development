@@ -40,39 +40,3 @@ function zeroIndexRet(matrix){
 }
 
 setZeroes(matrix);
-
-// var setZeroes = function(matrix) {
-//     let row = matrix.length;
-//     let col = matrix[0].length;
-//     let rowsToZero = new Set();
-//     let colsToZero = new Set();
-
-//     // Find the rows and columns that need to be zeroed
-//     for (let i = 0; i < row; i++) {
-//         for (let j = 0; j < col; j++) {
-//             if (matrix[i][j] === 0) {
-//                 rowsToZero.add(i);
-//                 colsToZero.add(j);
-//             }
-//         }
-//     }
-
-//     // Set rows to zero
-//     rowsToZero.forEach(i => {
-//         for (let j = 0; j < col; j++) {
-//             matrix[i][j] = 0;
-//         }
-//     });
-
-//     // Set columns to zero
-//     colsToZero.forEach(j => {
-//         for (let i = 0; i < row; i++) {
-//             matrix[i][j] = 0;
-//         }
-//     });
-
-//     console.log(matrix);
-// };
-
-// const matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]];
-// setZeroes(matrix);
