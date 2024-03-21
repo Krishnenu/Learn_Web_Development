@@ -25,11 +25,17 @@ export const todoSlice=createSlice({
         removeTodo:(state,action:PayloadAction<string>)=>{
             state.todos=state.todos.filter((todo)=>todo.id!==action.payload);
 
-        },   
+        },
+        updateToDo: (state, action: PayloadAction<{ id: string; newText: string }>) => {
+            const { id, newText } = action.payload;
+            state.todos = state.todos.map((todo) =>
+              todo.id === id ? { ...todo, text: newText } : todo
+            );
+        },
     }
 
 })
 
-export const {addToDo,removeTodo}=todoSlice.actions;
+export const {addToDo,removeTodo,updateToDo}=todoSlice.actions;
 
 export const todoReducer= todoSlice.reducer;
